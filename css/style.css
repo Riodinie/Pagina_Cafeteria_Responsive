@@ -151,6 +151,7 @@ section#hero {
   font-size: 4.25rem;
   margin-bottom: 1rem;
   z-index: 2;
+  margin: 0.2rem;
 }
 
 #hero p {
@@ -158,6 +159,7 @@ section#hero {
   font-weight: 300;
   font-size: 1.2rem;
   z-index: 2;
+  margin: 0.2rem;
 }
 
 #hero img {

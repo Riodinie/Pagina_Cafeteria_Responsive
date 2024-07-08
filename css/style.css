@@ -1,0 +1,204 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  background-color: #000;
+  background-image: url("../img/coffe-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: "Marcellus", serif;
+}
+
+body::before{
+  background-color: rgba(0,0,0,0.6);
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+li {
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+}
+
+.links a::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background:#fff;
+  z-index: 1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+
+.links a:hover::before{
+  transform: scaleX(1);
+}
+
+header {
+  position: relative;
+  padding: 0 2rem;
+  z-index: 3;
+}
+
+.navbar{
+  width: 100%;
+  height: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo a {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle_btn {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.dropdown_menu{
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  height: 0;
+  width: 300px;
+  background-color: rgba(225, 255, 225, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+.dropdown_menu.open{
+  height: 215px;
+}
+
+
+.dropdown_menu li{
+  padding: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown_menu .action_btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+section#hero{
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+#hero h1{
+  font-size: 4.25rem;
+  margin-bottom: 1rem;
+  z-index: 2
+}
+
+#hero p{
+  font-family: "Open Sans", serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  z-index: 2;
+}
+
+#hero img{
+  margin-bottom: 1rem;
+}
+
+.action_btn{
+  border: 1.5px solid #fff;
+  color: #fff;
+  padding: 1.438rem 3.125rem;
+  outline: none;
+  font-size: 0.875rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale .2 ease;
+  margin: 1.4rem;
+  font-family: "Open Sans", serif;
+  font-weight: 600;
+
+}
+
+.action_btn:hover{
+  scale: 1.05;
+  color: #fff;
+}
+
+.action_btn.active{
+  scale: 0.95;
+}
+
+@media (max-width: 992px) {
+  .navbar .links,
+  .navbar .action_btn {
+    display: none;
+  }
+
+  .navbar .toggle_btn{
+    display: block;
+  }
+
+  .dropdown_menu{
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .dropdown_menu{
+    left: 2rem;
+    width: unset;
+  }
+
+  
+}
+
+
